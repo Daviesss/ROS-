@@ -1,0 +1,227 @@
+<?xml version="1.0" ?>
+<robot name="Autonomous" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find Autonomous_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find Autonomous_description)/urdf/Autonomous.trans" />
+<xacro:include filename="$(find Autonomous_description)/urdf/Autonomous.gazebo" />
+<link name="base_link">
+<link name="base_footprint" />
+
+<joint name="base_footprint_joint" type="fixed">
+  <parent link="base_footprint" />
+  <child link="base_link" />
+</joint>
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.00045547425860864745 0.00013334157263914496 0.12256683574833657"/>
+    <mass value="161.811167542829"/>
+    <inertia ixx="2.199011" ixy="-0.013482" ixz="0.005606" iyy="3.826048" iyz="-0.00094" izz="5.183959"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="head_plate_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0008857179936177908 -0.00020093464683702602 0.028916723028354296"/>
+    <mass value="76.46434417799571"/>
+    <inertia ixx="0.79036" ixy="0.025407" ixz="0.006932" iyy="1.841929" iyz="-0.004605" izz="2.551353"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.002 0.0 -0.2"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/head_plate_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.002 0.0 -0.2"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/head_plate_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftwheel1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-8.462941458731166e-11 0.017600805928090324 -3.566898929691087e-07"/>
+    <mass value="28.50616227536455"/>
+    <inertia ixx="0.136487" ixy="-0.0" ixz="0.0" iyy="0.241289" iyz="-0.0" izz="0.136487"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.175 0.2315 -0.051428"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/leftwheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.175 0.2315 -0.051428"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/leftwheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftwheel2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.7442909883722564e-11 0.017667816011131182 -3.560382714137833e-07"/>
+    <mass value="28.69673795938468"/>
+    <inertia ixx="0.138023" ixy="0.0" ixz="-0.0" iyy="0.244287" iyz="0.0" izz="0.138023"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.175 0.2315 -0.051428"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/leftwheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.175 0.2315 -0.051428"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/leftwheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightwheel1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.7761209170075176e-11 -0.01769598448241705 5.0064323180165626e-08"/>
+    <mass value="28.706203799863335"/>
+    <inertia ixx="0.138087" ixy="0.0" ixz="-0.0" iyy="0.244397" iyz="0.0" izz="0.138087"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.175 -0.2315 -0.053213"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/rightwheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.175 -0.2315 -0.053213"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/rightwheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightwheel2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-4.964404998197836e-10 -0.017657317794122274 5.293726080407568e-08"/>
+    <mass value="28.688999718753134"/>
+    <inertia ixx="0.137953" ixy="-0.0" ixz="0.0" iyy="0.244154" iyz="0.0" izz="0.137953"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.175 -0.2315 -0.053213"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/rightwheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.175 -0.2315 -0.053213"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/rightwheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.09799956899999965 0.20000049002590786 -0.008728002015254144"/>
+    <mass value="3.595695297056587"/>
+    <inertia ixx="0.004215" ixy="-0.0" ixz="0.0" iyy="0.004276" iyz="-0.0" izz="0.003052"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.286443 0.129544 -0.3"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.286443 0.129544 -0.3"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0007088684452421501 -6.279580039501853e-05 0.04145103987922577"/>
+    <mass value="1.7065577459889112"/>
+    <inertia ixx="0.002495" ixy="2e-06" ixz="-5.7e-05" iyy="0.002734" iyz="6e-06" izz="0.000917"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.189761 0.076346 -0.27"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.189761 0.076346 -0.27"/>
+    <geometry>
+      <mesh filename="package://Autonomous_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid1" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.002 0.0 0.2"/>
+  <parent link="base_link"/>
+  <child link="head_plate_1"/>
+</joint>
+
+<joint name="Rev2" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.175 -0.2315 0.051428"/>
+  <parent link="base_link"/>
+  <child link="leftwheel1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev3" type="continuous">
+  <origin rpy="0 0 0" xyz="0.175 -0.2315 0.051428"/>
+  <parent link="base_link"/>
+  <child link="leftwheel2_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev4" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.175 0.2315 0.053213"/>
+  <parent link="base_link"/>
+  <child link="rightwheel1_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev5" type="continuous">
+  <origin rpy="0 0 0" xyz="0.175 0.2315 0.053213"/>
+  <parent link="base_link"/>
+  <child link="rightwheel2_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid6" type="fixed">
+  <origin rpy="0 0 0" xyz="0.288443 -0.129544 0.1"/>
+  <parent link="head_plate_1"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="Rigid7" type="fixed">
+  <origin rpy="0 0 0" xyz="0.191761 -0.076346 0.07"/>
+  <parent link="head_plate_1"/>
+  <child link="camera_1"/>
+</joint>
+
+</robot>
